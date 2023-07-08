@@ -1,0 +1,17 @@
+.select_input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: linear-gradient(45deg, transparent 50%, white 50%),
+    linear-gradient(135deg, white 50%, transparent 50%),
+    linear-gradient(to right, #51a5d1, #51a5d1);
+  background-position: calc(86%) calc(55%), calc(90%) calc(55%), 100% 0;
+  background-size: 5px 5px, 5px 5px, 25% 100%;
+  background-repeat: no-repeat;
+}
+.option {
+  background: #51a5d1;
+}
+.text_input::placeholder {
+  @apply text-xs;
+}
