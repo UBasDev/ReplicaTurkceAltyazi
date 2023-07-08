@@ -1,4 +1,5 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+##
+Hello guys, this is UCBDev. I will try to create a better coded replica of https://turkcealtyazi.org/ website by using NextJS and tools. I will use clean code and architecture for entire project. Development is still ongoing.
 
 ## Getting Started
 
