@@ -58,11 +58,12 @@ const select_search_type_options: ReadonlyArray<ISearch_Type_Option> = [
 const header_search_form_classes1 = "flex flex-col h-full gap-y-1";
 const header_search_form_classes2 = "flex items-end justify-center h-full";
 const header_search_form_classes3 =
-  "text-xs h-10 rounded-l-md p-0 pl-2 pr-8 m-0 outline-none";
+  "text-xs h-8 rounded-l-md p-0 pl-2 pr-8 m-0 outline-none";
 const header_search_form_classes4 =
-  "h-10 grow p-0 px-2 m-0 text-xs outline-none";
-const header_search_form_classes5 = "h-10 bg-white p-2";
-const header_search_form_classes6 = "h-full max-h-full";
+  "h-8 grow p-0 px-2 m-0 text-xs outline-none";
+const header_search_form_classes5 = "h-8 bg-white px-2 py-1";
+const header_search_form_classes6 =
+  "global_scale_up_animation text-gray-500 font-black hover:text-green-500";
 const header_search_form_classes7 = "text-xs p-0 m-0";
 const select_input_name = "search_type";
 const search_input_name = "search_text";
@@ -150,7 +151,8 @@ export default function Header_Search_Form(): JSX.Element {
           />
           <button className={header_search_form_classes5} type="submit">
             <FontAwesomeIcon
-              className={header_search_form_classes6}
+              style={{ height: "100%" }}
+              className={`${header_search_form_classes6} `}
               icon={faMagnifyingGlass}
             />
           </button>

@@ -106,3 +106,17 @@ option {
   outline: none;
   border: none;
 }
+.global_scale_up_animation {
+  transition: 0.3s ease-out all;
+  cursor: pointer;
+}
+.global_scale_up_animation:hover {
+  transform: scale(1.1);
+}
+.global_rotate_360_degree {
+  transition: 0.6s ease-out all;
+  cursor: pointer;
+}
+.global_rotate_360_degree:hover {
+  transform: rotate(360deg);
+}
