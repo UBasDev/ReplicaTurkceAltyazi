@@ -55,18 +55,23 @@ const select_search_type_options: ReadonlyArray<ISearch_Type_Option> = [
   },
 ];
 
-const header_search_form_classes1 = "flex flex-col h-full gap-y-1";
-const header_search_form_classes2 = "flex items-end justify-center h-full";
-const header_search_form_classes3 =
-  "text-xs h-8 rounded-l-md p-0 pl-2 pr-8 m-0 outline-none";
-const header_search_form_classes4 =
-  "h-8 grow p-0 px-2 m-0 text-xs outline-none";
-const header_search_form_classes5 = "h-8 bg-white px-2 py-1";
-const header_search_form_classes6 =
-  "global_scale_up_animation text-gray-500 font-black hover:text-green-500";
-const header_search_form_classes7 = "text-xs p-0 m-0";
-const select_input_name = "search_type";
-const search_input_name = "search_text";
+const component_classes = {
+  header_search_form_classes1: "flex flex-col h-full gap-y-1",
+  header_search_form_classes2: "flex items-end justify-center h-full",
+  header_search_form_classes3:
+    "text-xs h-8 rounded-l-md p-0 pl-2 pr-8 m-0 outline-none",
+  header_search_form_classes4: "h-8 grow p-0 px-2 m-0 text-xs outline-none",
+  header_search_form_classes5:
+    "h-8 pr-1 bg-white flex items-center justify-center",
+  header_search_form_classes6:
+    "global_scale_up_animation text-gray-500 font-black hover:text-green-500",
+  header_search_form_classes7: "text-xs p-0 m-0",
+};
+
+const component_constants = {
+  select_input_name: "search_type",
+  search_input_name: "search_text",
+};
 
 export default function Header_Search_Form(): JSX.Element {
   useEffect(() => {
@@ -93,8 +98,9 @@ export default function Header_Search_Form(): JSX.Element {
   }: any = useForm({
     resolver: yupResolver(Homepage_Search_Validation_Scheme),
     defaultValues: {
-      [select_input_name]: starter_selected_search_type.value,
-      [search_input_name]: "",
+      [component_constants.select_input_name]:
+        starter_selected_search_type.value,
+      [component_constants.search_input_name]: "",
     },
   });
 
@@ -123,14 +129,14 @@ export default function Header_Search_Form(): JSX.Element {
 
   return (
     <>
-      <div className={header_search_form_classes1}>
+      <div className={component_classes.header_search_form_classes1}>
         <form
           onSubmit={handleSubmit(handleFormSubmit, handleFormError)}
-          className={header_search_form_classes2}
+          className={component_classes.header_search_form_classes2}
         >
           <select
-            className={`${component_styles.select_input} ${header_search_form_classes3}`}
-            {...register(select_input_name, {})}
+            className={`${component_styles.select_input} ${component_classes.header_search_form_classes3}`}
+            {...register(component_constants.select_input_name, {})}
             defaultValue={starter_selected_search_type.value}
           >
             {select_search_type_options.map((item: ISearch_Type_Option) => (
@@ -144,20 +150,25 @@ export default function Header_Search_Form(): JSX.Element {
             ))}
           </select>
           <input
-            className={`${component_styles.text_input} ${header_search_form_classes4}`}
-            {...register(search_input_name)}
+            className={`${component_styles.text_input} ${component_classes.header_search_form_classes4}`}
+            {...register(component_constants.search_input_name)}
             type="text"
             placeholder={current_selected_type?.placeholder ?? ""}
           />
-          <button className={header_search_form_classes5} type="submit">
+          <button
+            className={component_classes.header_search_form_classes5}
+            type="submit"
+          >
             <FontAwesomeIcon
-              style={{ height: "100%" }}
-              className={`${header_search_form_classes6} `}
+              style={{
+                height: "1.2rem",
+              }}
+              className={`${component_classes.header_search_form_classes6}`}
               icon={faMagnifyingGlass}
             />
           </button>
         </form>
-        <p className={header_search_form_classes7}>
+        <p className={component_classes.header_search_form_classes7}>
           {(formState.errors?.search_type?.message ||
             formState.errors?.search_text?.message) ?? <span>&nbsp;</span>}
         </p>

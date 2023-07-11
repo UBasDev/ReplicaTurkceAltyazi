@@ -1,8 +1,73 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto_fonts = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Roboto/Roboto_Thin.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Roboto/Roboto_Thin.ttf",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Roboto/Roboto_ThinItalic.ttf",
+      weight: "100",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/Roboto/Roboto_Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Roboto/Roboto_LightItalic.ttf",
+      weight: "300",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/Roboto/Roboto_Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Roboto/Roboto_Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Roboto/Roboto_MediumItalic.ttf",
+      weight: "500",
+      style: "italic",
+    },
+
+    {
+      path: "../../public/fonts/Roboto/Roboto_Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Roboto/Roboto_BoldItalic.ttf",
+      weight: "700",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/Roboto/Roboto_Black.ttf",
+      weight: "900",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Roboto/Roboto_BlackItalic.ttf",
+      weight: "900",
+      style: "italic",
+    },
+  ],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +84,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={roboto_fonts.className}>{children}</body>
     </html>
   );
 }
