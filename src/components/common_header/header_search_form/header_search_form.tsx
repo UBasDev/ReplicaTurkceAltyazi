@@ -6,7 +6,10 @@ import { useForm } from "react-hook-form";
 import component_styles from "./header_search_form.module.css";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMagnifyingGlass,
+  faExclamationTriangle,
+} from "@fortawesome/free-solid-svg-icons";
 //import {} from "@fortawesome/fontawesome-svg-core"
 
 interface ISearch_Type_Option {
@@ -60,12 +63,12 @@ const component_classes = {
   header_search_form_classes2: "flex items-end justify-center h-full",
   header_search_form_classes3:
     "text-xs h-8 rounded-l-md p-0 pl-2 pr-8 m-0 outline-none",
-  header_search_form_classes4: "h-8 grow p-0 px-2 m-0 text-xs outline-none",
+  header_search_form_classes4: "h-8 grow p-0 px-2 m-0 outline-none",
   header_search_form_classes5:
     "h-8 pr-1 bg-white flex items-center justify-center",
   header_search_form_classes6:
     "global_scale_up_animation text-gray-500 font-black hover:text-green-500",
-  header_search_form_classes7: "text-xs p-0 m-0",
+  header_search_form_classes7: "text-sm p-0 m-0",
 };
 
 const component_constants = {
@@ -168,9 +171,20 @@ export default function Header_Search_Form(): JSX.Element {
             />
           </button>
         </form>
-        <p className={component_classes.header_search_form_classes7}>
-          {(formState.errors?.search_type?.message ||
-            formState.errors?.search_text?.message) ?? <span>&nbsp;</span>}
+        <p
+          className={`${component_classes.header_search_form_classes7} text-red-600 text-center font-extrabold`}
+        >
+          {formState.errors?.search_type?.message ||
+          formState.errors?.search_text?.message ? (
+            <span>
+              <FontAwesomeIcon icon={faExclamationTriangle} />
+              &nbsp;
+              {formState.errors?.search_type?.message ||
+                formState.errors?.search_text?.message}
+            </span>
+          ) : (
+            <span>&nbsp;</span>
+          )}
         </p>
       </div>
     </>

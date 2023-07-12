@@ -17,6 +17,17 @@ const component_classes = {
   component_header4: "col-start-2 col-end-24",
 };
 
+const media_query_shower: any = {
+  position: "fixed",
+  bottom: "2%",
+  left: "2%",
+  backgroundColor: "red",
+  zIndex: "999",
+  padding: "1rem 2rem",
+  color: "white",
+  fontWeight: "700",
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -31,6 +42,33 @@ export default function RootLayout({
           <div className={component_classes.component_header4}>{children}</div>
           <div className={component_classes.component_header4}>
             This is bottom
+          </div>
+          <div style={media_query_shower} className="sm:hidden">
+            THIS IS MOBILE
+          </div>
+          <div style={media_query_shower} className="sm:block md:hidden">
+            THIS IS SM
+          </div>
+          <div style={media_query_shower} className="hidden md:block lg:hidden">
+            THIS IS MD
+          </div>
+          <div style={media_query_shower} className="hidden lg:block xl:hidden">
+            THIS IS LG
+          </div>
+          <div
+            style={media_query_shower}
+            className="hidden xl:block 2xl:hidden"
+          >
+            THIS IS XL
+          </div>
+          <div
+            style={media_query_shower}
+            className="hidden 2xl:block 3xl:hidden"
+          >
+            THIS IS 2XL
+          </div>
+          <div style={media_query_shower} className="hidden 3xl:block">
+            THIS IS 3XL
           </div>
         </div>
       </body>

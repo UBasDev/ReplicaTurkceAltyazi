@@ -17,7 +17,7 @@ interface Component_Props {
 }
 
 const component_classes = {
-  header_classes1: "col-start-2 col-end-24 py-2",
+  header_classes1: "col-start-2 col-end-24 pt-2",
   header_classes2: "grid grid-cols-24 gap-0 px-2",
   header_classes3: "col-span-4 flex justify-center",
   header_classes4: "lg:col-span-12 xl:col-span-10 px-10",
@@ -25,7 +25,7 @@ const component_classes = {
   header_classes6: "lg:col-span-2 xl:col-span-3",
   header_classes7:
     "lg:col-span-6 xl:col-span-7 flex items-start justify-end gap-x-2",
-  header_classes8: "bg-white rounded-full p-1.5 global_rotate_360_degree",
+  header_classes8: "bg-white rounded-full p-1.5 global_rotate_360_degree h-6",
 };
 
 const hompage_logo_metadata = "Homepage Logo UCBDev";
@@ -33,7 +33,6 @@ const hompage_logo_metadata = "Homepage Logo UCBDev";
 const component_styles = {
   icon_style: {
     color: "rgb(30, 138, 194)",
-    height: "26px",
   },
 };
 

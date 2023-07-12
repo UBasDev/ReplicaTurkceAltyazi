@@ -1,4 +1,5 @@
 .select_input {
+  font-size: 14px;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -12,12 +13,15 @@
 }
 
 .option {
-  @apply text-white;
+  color: white;
   background: #51a5d1;
   border: none;
   outline: none;
 }
+.text_input {
+  font-size: 14px;
+}
 .text_input::placeholder {
-  @apply text-xs;
+  font-size: 14px;
   color: gray;
 }

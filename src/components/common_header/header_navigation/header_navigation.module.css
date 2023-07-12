@@ -1,0 +1,24 @@
+.main_nav_item_hover {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 25px;
+  transition: 0.3s ease-out all;
+  background-color: #2094ce;
+  cursor: pointer;
+}
+.main_nav_item_hover:hover {
+  background-color: #e5edf3 !important;
+  color: #1e8ac2;
+}
+.sub_nav_item_hover {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+  color: "#1977a6";
+  transition: 0.3s ease-out all;
+  cursor: pointer;
+}
+.sub_nav_item_hover:hover {
+  text-decoration: underline;
+  text-decoration-color: #1977a6;
+}

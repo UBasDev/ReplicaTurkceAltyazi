@@ -1,0 +1,33 @@
+.modal_container1 {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0);
+  transition: opacity 0.3s 0s ease-out, transform 0.3s 0s ease-out;
+  transform-origin: center;
+}
+.modal1 {
+  color: white;
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0);
+  transition: opacity 0.3s 0s ease-out, transform 0.3s 0s ease-out;
+  transform-origin: center;
+  background-color: red;
+  height: max-content;
+}
+.show_modal1 {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: scale(1) !important;
+}
