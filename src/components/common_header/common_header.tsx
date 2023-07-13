@@ -63,21 +63,33 @@ export default function Common_Header(props: Component_Props): JSX.Element {
             <Header_Search_Form />
           </div>
           <div className={component_classes.header_classes7}>
-            <Link target="_blank" href={component_constants.instagram_url}>
+            <Link
+              target="_blank"
+              as={component_constants.instagram_url}
+              href={component_constants.instagram_url}
+            >
               <FontAwesomeIcon
                 style={component_styles.icon_style}
                 className={component_classes.header_classes8}
                 icon={faInstagram}
               />
             </Link>
-            <Link target="_blank" href={component_constants.github_url}>
+            <Link
+              target="_blank"
+              as={component_constants.github_url}
+              href={component_constants.github_url}
+            >
               <FontAwesomeIcon
                 style={component_styles.icon_style}
                 className={component_classes.header_classes8}
                 icon={faGithub}
               />
             </Link>
-            <Link target="_blank" href={component_constants.linkedin_url}>
+            <Link
+              target="_blank"
+              as={component_constants.linkedin_url}
+              href={component_constants.linkedin_url}
+            >
               <FontAwesomeIcon
                 style={component_styles.icon_style}
                 className={component_classes.header_classes8}

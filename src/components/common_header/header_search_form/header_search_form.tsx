@@ -10,6 +10,8 @@ import {
   faMagnifyingGlass,
   faExclamationTriangle,
 } from "@fortawesome/free-solid-svg-icons";
+import Custom_Text_Input from "@/components/form_inputs/custom_text_input/custom_text_input";
+import Custom_Submit_Button from "@/components/buttons/custom_submit_button/custom_submit_button";
 //import {} from "@fortawesome/fontawesome-svg-core"
 
 interface ISearch_Type_Option {
@@ -78,6 +80,18 @@ const component_constants = {
 
 export default function Header_Search_Form(): JSX.Element {
   useEffect(() => {
+    // document.getElementById("elem1")?.addEventListener(
+    //   "mouseenter",
+    //   () => {
+    //     console.log("Event triggered!");
+    //   },
+    //   {
+    //     capture: false,
+    //   }
+    // );
+  }, []);
+
+  useEffect(() => {
     set_current_selected_type(select_search_type_options[0]);
   }, []);
 
@@ -132,7 +146,7 @@ export default function Header_Search_Form(): JSX.Element {
 
   return (
     <>
-      <div className={component_classes.header_search_form_classes1}>
+      <div id="elem1" className={component_classes.header_search_form_classes1}>
         <form
           onSubmit={handleSubmit(handleFormSubmit, handleFormError)}
           className={component_classes.header_search_form_classes2}
@@ -152,15 +166,13 @@ export default function Header_Search_Form(): JSX.Element {
               </option>
             ))}
           </select>
-          <input
+          <Custom_Text_Input
+            placeholder={current_selected_type?.placeholder}
             className={`${component_styles.text_input} ${component_classes.header_search_form_classes4}`}
-            {...register(component_constants.search_input_name)}
-            type="text"
-            placeholder={current_selected_type?.placeholder ?? ""}
+            attributes={register(component_constants.search_input_name)}
           />
-          <button
+          <Custom_Submit_Button
             className={component_classes.header_search_form_classes5}
-            type="submit"
           >
             <FontAwesomeIcon
               style={{
@@ -169,7 +181,7 @@ export default function Header_Search_Form(): JSX.Element {
               className={`${component_classes.header_search_form_classes6}`}
               icon={faMagnifyingGlass}
             />
-          </button>
+          </Custom_Submit_Button>
         </form>
         <p
           className={`${component_classes.header_search_form_classes7} text-red-600 text-center font-extrabold`}

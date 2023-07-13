@@ -34,44 +34,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
-        <div className={component_classes.component_header1}>
-          <Common_Header classes={component_classes.component_header2} />
-          <Mobile_Header classes={component_classes.component_header3} />
-          <div className={component_classes.component_header4}>{children}</div>
-          <div className={component_classes.component_header4}>
-            This is bottom
-          </div>
-          <div style={media_query_shower} className="sm:hidden">
-            THIS IS MOBILE
-          </div>
-          <div style={media_query_shower} className="sm:block md:hidden">
-            THIS IS SM
-          </div>
-          <div style={media_query_shower} className="hidden md:block lg:hidden">
-            THIS IS MD
-          </div>
-          <div style={media_query_shower} className="hidden lg:block xl:hidden">
-            THIS IS LG
-          </div>
-          <div
-            style={media_query_shower}
-            className="hidden xl:block 2xl:hidden"
-          >
-            THIS IS XL
-          </div>
-          <div
-            style={media_query_shower}
-            className="hidden 2xl:block 3xl:hidden"
-          >
-            THIS IS 2XL
-          </div>
-          <div style={media_query_shower} className="hidden 3xl:block">
-            THIS IS 3XL
-          </div>
-        </div>
-      </body>
-    </html>
+    <div className={component_classes.component_header1}>
+      <Common_Header classes={component_classes.component_header2} />
+      <Mobile_Header classes={component_classes.component_header3} />
+      <div className={component_classes.component_header4}>{children}</div>
+      <div className={component_classes.component_header4}>This is bottom</div>
+      <div style={media_query_shower} className="sm:hidden">
+        THIS IS MOBILE
+      </div>
+      <div style={media_query_shower} className="sm:block md:hidden">
+        THIS IS SM
+      </div>
+      <div style={media_query_shower} className="hidden md:block lg:hidden">
+        THIS IS MD
+      </div>
+      <div style={media_query_shower} className="hidden lg:block xl:hidden">
+        THIS IS LG
+      </div>
+      <div style={media_query_shower} className="hidden xl:block 2xl:hidden">
+        THIS IS XL
+      </div>
+      <div style={media_query_shower} className="hidden 2xl:block 3xl:hidden">
+        THIS IS 2XL
+      </div>
+      <div style={media_query_shower} className="hidden 3xl:block">
+        THIS IS 3XL
+      </div>
+    </div>
   );
 }

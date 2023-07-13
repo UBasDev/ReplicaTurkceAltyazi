@@ -5,7 +5,7 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import component_styles from "./header_navigation.module.css";
 import Link from "next/link";
 import { useEffect, useReducer } from "react";
-import Login_Modal from "@/components/modals/login_modal";
+import Login_Modal from "@/components/modals/login_modal/login_modal";
 
 enum Reducer_Action_Enum {
   CHANGE_CURRENT_ACTIVE_NAV_ITEM = "CHANGE_CURRENT_ACTIVE_NAV_ITEM",
@@ -340,7 +340,11 @@ export default function Header_Navigation(): JSX.Element {
       <div className="grid grid-cols-24 gap-0 text-white pt-2 px-0.5">
         <div className="col-span-21 xl:col-span-20 2xl:col-span-20 flex items-center justify-start gap-x-1">
           {nav_items.map((item: INavItem) => (
-            <Link key={item.id} href={item.anchor_path ?? {}}>
+            <Link
+              as={item.anchor_path ?? {}}
+              key={item.id}
+              href={item.anchor_path ?? {}}
+            >
               <div
                 onMouseEnter={() =>
                   reducer_dispatch({
@@ -364,7 +368,11 @@ export default function Header_Navigation(): JSX.Element {
         <div className="col-span-1 3xl:col-span-1"></div>
         <div className="col-span-2 xl:col-span-3 3xl:col-span-3 flex items-center justify-end gap-x-1">
           {auth_buttons.map((item: IAuthButton) => (
-            <Link key={item.id} href={item.anchor_path ?? {}}>
+            <Link
+              key={item.id}
+              as={item.anchor_path ?? {}}
+              href={item.anchor_path ?? {}}
+            >
               <div
                 onClick={(event: any) => {
                   if (item.button_value === "Login")
@@ -378,7 +386,7 @@ export default function Header_Navigation(): JSX.Element {
                     ?.classList.add("show_modal1");
                     */
                 }}
-                className={`${component_styles.main_nav_item_hover} rounded-md lg:px-2 xl:px-5 2xl:px-7 3xl:px-10 py-1`}
+                className={`${component_styles.main_nav_button_hover} rounded-md lg:px-2 xl:px-5 2xl:px-7 3xl:px-10 py-1`}
               >
                 <button>{item.button_key}</button>
               </div>

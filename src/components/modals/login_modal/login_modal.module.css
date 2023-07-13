@@ -1,32 +1,31 @@
-.modal_container1 {
+.login_modal_container {
   position: fixed;
   width: 100vw;
   height: 100vh;
   left: 0;
   top: 0;
   background-color: rgba(0, 0, 0, 0.3);
-  z-index: 999;
+  z-index: 998;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   pointer-events: none;
-  transform: scale(0);
   transition: opacity 0.3s 0s ease-out, transform 0.3s 0s ease-out;
   transform-origin: center;
 }
-.modal1 {
+.login_modal_body {
   color: white;
-  z-index: 998;
+  z-index: 9989;
   opacity: 0;
   pointer-events: none;
   transform: scale(0);
   transition: opacity 0.3s 0s ease-out, transform 0.3s 0s ease-out;
   transform-origin: center;
-  background-color: red;
+  background-color: #135f87;
   height: max-content;
 }
-.show_modal1 {
+.show_login_modal {
   opacity: 1 !important;
   pointer-events: auto !important;
   transform: scale(1) !important;

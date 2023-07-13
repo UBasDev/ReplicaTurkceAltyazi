@@ -20,6 +20,7 @@
 }
 .text_input {
   font-size: 14px;
+  color: gray;
 }
 .text_input::placeholder {
   font-size: 14px;
