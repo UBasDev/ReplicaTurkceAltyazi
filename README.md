@@ -1,5 +1,14 @@
 ##
-Hello guys, this is UCBDev. I will try to create a better coded replica of https://turkcealtyazi.org/ website by using NextJS and tools. I will use clean code and architecture for entire project. Development is still ongoing.
+Hello guys, this is UCBDev. I will try to create a better coded replica of https://turkcealtyazi.org/ website by using NextJS and tools. I will use clean code and architecture for entire project. Development is still ongoing. Some of the technologies and tools which i will use:
+-Nextjs
+-Docker[Container]
+-Tailwind[UI]
+-Redux[States]
+-ReactFormHook[Form]
+-Yup[Validation]
+.
+.
+.
 
 ## Getting Started
 
