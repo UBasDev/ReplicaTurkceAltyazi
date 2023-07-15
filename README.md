@@ -1,11 +1,11 @@
 ##
-Hello guys, this is UCBDev. I will try to create a better coded replica of https://turkcealtyazi.org/ website by using NextJS and tools. I will use clean code and architecture for entire project. Development is still ongoing. Some of the technologies and tools which i will use:
--Nextjs
--Docker[Container]
--Tailwind[UI]
--Redux[States]
--ReactFormHook[Form]
--Yup[Validation]
+## Hello guys, this is UCBDev. I will try to create a better coded replica of https://turkcealtyazi.org/ website by using NextJS and tools. I will use clean code and architecture for entire project. Development is still ongoing. Some of the technologies and tools which i will use:<br/>
+-Nextjs<br/>
+-Docker[Container]<br/>
+-Tailwind[UI]<br/>
+-Redux[States]<br/>
+-ReactFormHook[Form]<br/>
+-Yup[Validation]<br/>
 .
 .
 .
