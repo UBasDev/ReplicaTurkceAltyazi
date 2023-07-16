@@ -4,6 +4,7 @@ import Use_Click_Outside_Custom_Hook from "@/custom_hooks/use_click_outside_cust
 import Use_Event_Listener from "@/custom_hooks/use_event_listener";
 import Login_Modal_Form from "./login_modal_form/login_modal_form";
 import dynamic from "next/dynamic";
+import dynamic from "next/dynamic";
 
 enum Reducer_Action_Enum {
   CHANGE_CURRENT_ACTIVE_NAV_ITEM = "CHANGE_CURRENT_ACTIVE_NAV_ITEM",
@@ -21,9 +22,7 @@ interface IComponent_Props {
   dispatch_close_login_modal: Dispatch<IReducer_Action>;
 }
 
-const Login_Modal = (
-  props: IComponent_Props
-): JSX.Element => {
+const Login_Modal = (props: IComponent_Props): JSX.Element => {
   const element_ref_to_listen_outside_click: any = useRef();
   Use_Click_Outside_Custom_Hook(element_ref_to_listen_outside_click, () =>
     props.is_login_modal_active
@@ -57,7 +56,7 @@ const Login_Modal = (
       </div>
     </div>
   );
-}
+};
 export default dynamic(() => Promise.resolve(Login_Modal), {
   ssr: false,
 });
