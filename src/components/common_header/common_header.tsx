@@ -40,7 +40,49 @@ const component_constants = {
   instagram_url: "https://instagram.com/ugurcanbas_?igshid=MzNlNGNkZWQ4Mg==",
   github_url: "https://github.com/UCB52",
   linkedin_url: "https://www.linkedin.com/in/u%C4%9Furcan-ba%C5%9F-84b91a206",
+  icon_name1: "instagram",
+  icon_name2: "github",
+  icon_name3: "linkedin",
 };
+
+const component_icons = [
+  {
+    id: 1,
+    name: component_constants.icon_name1,
+    icon_element: (
+      <FontAwesomeIcon
+        style={component_styles.icon_style}
+        className={component_classes.header_classes8}
+        icon={faInstagram}
+      />
+    ),
+    anchor_path: component_constants.instagram_url,
+  },
+  {
+    id: 2,
+    name: component_constants.icon_name2,
+    icon_element: (
+      <FontAwesomeIcon
+        style={component_styles.icon_style}
+        className={component_classes.header_classes8}
+        icon={faGithub}
+      />
+    ),
+    anchor_path: component_constants.github_url,
+  },
+  {
+    id: 3,
+    name: component_constants.icon_name3,
+    icon_element: (
+      <FontAwesomeIcon
+        style={component_styles.icon_style}
+        className={component_classes.header_classes8}
+        icon={faLinkedin}
+      />
+    ),
+    anchor_path: component_constants.linkedin_url,
+  },
+];
 
 export default function Common_Header(props: Component_Props): JSX.Element {
   return (
@@ -63,39 +105,16 @@ export default function Common_Header(props: Component_Props): JSX.Element {
             <Header_Search_Form />
           </div>
           <div className={component_classes.header_classes7}>
-            <Link
-              target="_blank"
-              as={component_constants.instagram_url}
-              href={component_constants.instagram_url}
-            >
-              <FontAwesomeIcon
-                style={component_styles.icon_style}
-                className={component_classes.header_classes8}
-                icon={faInstagram}
-              />
-            </Link>
-            <Link
-              target="_blank"
-              as={component_constants.github_url}
-              href={component_constants.github_url}
-            >
-              <FontAwesomeIcon
-                style={component_styles.icon_style}
-                className={component_classes.header_classes8}
-                icon={faGithub}
-              />
-            </Link>
-            <Link
-              target="_blank"
-              as={component_constants.linkedin_url}
-              href={component_constants.linkedin_url}
-            >
-              <FontAwesomeIcon
-                style={component_styles.icon_style}
-                className={component_classes.header_classes8}
-                icon={faLinkedin}
-              />
-            </Link>
+            {component_icons.map((current_icon: any) => (
+              <Link
+                key={current_icon.id}
+                target="_blank"
+                as={current_icon.anchor_path}
+                href={current_icon.anchor_path}
+              >
+                {current_icon.icon_element}
+              </Link>
+            ))}
           </div>
         </div>
         <Header_Navigation />

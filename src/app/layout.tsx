@@ -1,3 +1,4 @@
+import AuthProvider from "@/contexts/AuthProvider";
 import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
@@ -83,7 +84,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={roboto_fonts.className}>{children}</body>
+      <body className={roboto_fonts.className}>
+        <AuthProvider>{children}</AuthProvider>
+      </body>
     </html>
   );
 }
