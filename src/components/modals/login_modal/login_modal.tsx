@@ -4,7 +4,6 @@ import Use_Click_Outside_Custom_Hook from "@/custom_hooks/use_click_outside_cust
 import Use_Event_Listener from "@/custom_hooks/use_event_listener";
 import Login_Modal_Form from "./login_modal_form/login_modal_form";
 import dynamic from "next/dynamic";
-import dynamic from "next/dynamic";
 
 enum Reducer_Action_Enum {
   CHANGE_CURRENT_ACTIVE_NAV_ITEM = "CHANGE_CURRENT_ACTIVE_NAV_ITEM",
